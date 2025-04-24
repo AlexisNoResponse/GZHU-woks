@@ -1,0 +1,133 @@
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    overflow-y:hidden;
+}
+
+
+
+.game-container {
+    position: relative;
+    margin: 0 auto;
+    background-color: #2a2a2a;
+    background-image: url("/images/主背景.png");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    aspect-ratio: 750 / 1334;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100vh;
+}
+
+#start-button{
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+#week-transition {
+    display: none; /* 默认隐藏 */
+}
+
+#week-action {
+    display: none; /* 默认隐藏 */
+}
+
+#acion-content{
+    height: 62vh;
+    width: 38.7vh;
+    position: absolute;
+    top: 27vh;
+    left: 8.8vh;
+}
+
+#action-btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+#action-btn .button{
+    width: fit-content;
+}
+
+
+#dialog{
+    position: absolute;
+    bottom: 30px;
+    z-index: 9;
+    width: 100%;
+    aspect-ratio: 700 / 269;
+    background-image: url("/images/对话框.png");
+    background-position: center;
+    background-size: cover;
+    padding: 50px 40px;
+    box-sizing: border-box;
+}
+
+#dialog #dialog-text{
+    font-size: 2rem;
+    color: #f0f0f0;
+    margin: 0;
+    word-break: break-all;
+}
+
+.conform{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.title{
+    text-align: center;
+    font-size: 2rem;
+    color: black;
+    margin: 0;
+}
+
+.msg{
+    background-image: url("/images/信息框.png");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 474 / 143;
+    padding: 47px 80px;
+    box-sizing: border-box;
+    color: black;
+    font-size: 1rem;
+}
+
+.bottom-btn{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#player-state{
+    background-position: left;
+    font-size: 1.3rem;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: lightslategrey;
+    width: max-content;
+}

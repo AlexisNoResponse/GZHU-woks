@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字冒险游戏</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- 添加 anime.js 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <img src="/images/开始按钮.png" alt="开始按钮" id="start-button">
+
+        <div id="week-transition">
+            <img id="week-img" src="/images/周次过渡/第1周.png" alt="周次过渡">
+        </div>
+
+        <div id="week-action">
+            <div id="player-state">
+                
+            </div>
+            <img src="/images/手机.png" alt="周次过渡">
+            <div id="acion-content">
+                <div id="action-btn"  style="display: flex;">
+                    <img id="message-btn" src="/images/消息列表按钮.png" alt="按钮" class="button">
+                    <img id="social-btn" src="/images/社媒平台按钮.png" alt="按钮" class="button">
+                    <img id="activity-btn" src="/images/个人活动按钮.png" alt="按钮" class="button">
+                </div>
+                <div id="action-message" style="display: none;">
+                    <p class="title"></h3>
+                    <div class="msg"></div>
+                    <div class="bottom-btn">
+                        <img id="msg-btn" src="/images/返回按钮.png" alt="按钮" class="button">
+                        <img id="msg-close-btn" src="/images/确定按钮.png" alt="按钮" class="button">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="dialog" style="display: none;">
+            <div id="dialog-text">41141141114</div>
+            <img id="dialog-btn" src="/images/确定按钮.png" alt="按钮" class="button conform">
+                    
+        </div>
+    </div>
+
+    <script src="js/character.js"></script>
+    <script src="js/scenes.js"></script>
+    <script src="js/game.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        // 获取所有 .button 内的图片
+        const buttonImages = document.querySelectorAll('img.button');
+        
+        // 为每个图片添加悬停事件
+        buttonImages.forEach(img => {
+            // 保存原始src
+            const originalSrc = img.src;
+            
+            // 鼠标悬停时更改src
+            img.addEventListener('mouseover', function() {
+                const srcParts = originalSrc.split('.png');
+                if (srcParts.length > 1) {
+                    img.src = srcParts[0] + '（点击）.png' + srcParts[1];
+                }
+            });
+            
+            // 鼠标离开时恢复src
+            img.addEventListener('mouseout', function() {
+                img.src = originalSrc;
+            });
+        });
+    });
+    </script>
+</body>
+</html>
